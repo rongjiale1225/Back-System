@@ -2,7 +2,7 @@ const shopModel = require('../../models/shop');
 
 
 const getShoppingList =async (req,res,next) => {
-    let data = await shopModel.shoppingList;
+    let data = await shopModel.getShopList();
     res.responseData = {
         data:data
     }
