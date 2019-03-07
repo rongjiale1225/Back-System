@@ -4,8 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var {jasonFormal} = require('./middlewars')
+var { baseUrl } = require('./config');   
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var shopRouter = require('./routes/shop');
 
 var app = express();
 
@@ -19,8 +23,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//处理响应的数据格式，设置响应头为json格式
+app.use(baseUrl + '/', jasonFormal);
+
+
+app.use(baseUrl + '/', indexRouter);
+app.use(baseUrl + '/users', usersRouter);
+app.use(baseUrl + '/shop', shopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
