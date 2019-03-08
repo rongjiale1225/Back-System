@@ -11,11 +11,7 @@ var shopItemSchema = new mongoose.Schema({
     publishTime: Number    //发布时间
 })
 //建立模型，映射一个集合
-var Items = mongoose.model('shoplist',shopItemSchema); 
-
-Items.find({}).exec().then(res => {
-    console.log(res,11111);
-})
+var Shoplists = mongoose.model('shoplist',shopItemSchema); 
 
 
 //获取商品列表

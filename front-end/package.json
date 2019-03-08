@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config ./config/webpack.dev.js",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.js",
     "start": "npm run dev"
   },
   "author": "",
@@ -22,11 +22,14 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
+    "string-loader": "^0.0.1",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sme-router": "^0.12.8"
+  }
 }

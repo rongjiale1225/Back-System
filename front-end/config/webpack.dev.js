@@ -40,6 +40,10 @@ module.exports={
                     //将其作为静态资源，需要的时候到对应的目录引入即可
                     //只有图片小于限制的字节数时，使用url-loader来当成模块引入的js中输出为base64格式的字符串
             },
+            {//编译html文件
+                test: /.html$/,
+                use: ['string-loader']
+            },
             {//编译scss、css文件
                 test: /.(css|scss)$/,
                 use: [
