@@ -13,7 +13,13 @@ module.exports={
         path: path.join(__dirname, '../dev')
     },
     devServer: {
-        port: 9000
+        port: 9000,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                changeOrigin: true
+            }
+        }
     },
     plugins: [
         new CopyWebpackPlugin([ // 复制静态资源
@@ -71,7 +77,8 @@ module.exports={
             "@controllers": path.resolve(__dirname,'../src/javascripts/controllers'),
             "@models": path.resolve(__dirname,'../src/javascripts/models'),
             "@views": path.resolve(__dirname,'../src/javascripts/views'),
-            "@style": path.resolve(__dirname,'../src/stylesheets')
+            "@style": path.resolve(__dirname,'../src/stylesheets'),
+            "@utils": path.resolve(__dirname,'../src/javascripts/utils')
         }
     }
 }

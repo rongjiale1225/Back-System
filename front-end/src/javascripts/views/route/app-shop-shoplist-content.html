@@ -1,0 +1,26 @@
+<table class="table table-hover table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>图片</th>
+    <th>商品</th>
+    <th>价格</th>
+    <th>描述</th>
+    <th>状态</th>
+    <th>上架时间</th>
+    <th>发布时间</th>
+  </tr>
+  {{each item}}
+  <tr>
+    <td class="_id">{{ $index + 1 }}</td>
+    <td class="img"><img src="{{$value.img}}" alt=""></td>
+    <td><a href="#/movie/detail/{{$value._id}}">{{$value.name}}</a></td>
+    <td>{{$value.price}}</td>
+    <td>{{$value.description}}</td>
+    <td><span class="label label-{{$value.state === 'playing' ? 'success' : 'warning'}}">
+      {{$value.state === 'playing' ? '已上映' : '即将上映'}}
+    </span></td>
+    <td>{{$value.showTime}}</td>
+    <td>{{$value.publishTime}}</td>
+  </tr>
+  {{/each}}
+</table>

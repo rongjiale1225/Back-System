@@ -16,7 +16,7 @@ var Shoplists = mongoose.model('shoplist',shopItemSchema);
 
 //获取商品列表
 const getShopList = () => {
-    return Items.find({}).exec();
+    return Shoplists.find({});
 }
 
 

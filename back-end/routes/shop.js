@@ -5,6 +5,6 @@ const { response } = require('../middlewars')
 
 
 //获取商品信息
-router.get('/items', shopController.getShoppingList, response)
+router.get('/shoplists', shopController.getShoppingList, response)
   
 module.exports = router;
