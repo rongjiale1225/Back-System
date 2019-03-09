@@ -1,4 +1,4 @@
-import appHomeView from '@views/app-home-view.html';
+import appHomeView from '@views/route/app-home-view.html';
 
 const render = (req,res,next) => {
        res.render(appHomeView)

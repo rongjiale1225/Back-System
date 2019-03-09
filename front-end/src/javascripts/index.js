@@ -1,4 +1,4 @@
-import main from '@style/main.scss'
+import main from '@style/index.scss'
 
 
 import appController from '@controllers/app-controller';//app总控制器

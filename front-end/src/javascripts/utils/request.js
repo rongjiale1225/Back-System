@@ -1,6 +1,7 @@
 
 
 const request = (options) => {
+    console.log(options,88888)
     return new Promise((resolve, reject) => {
         $.ajax({
             ...options,
