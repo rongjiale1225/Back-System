@@ -17,13 +17,17 @@ var Shoplists = mongoose.model('shoplist',shopItemSchema);
 
 //获取商品列表
 const getShopLists = () => {
-    return Shoplists.find({});
+    return Shoplists.find({}).then( res => {
+        return {
+            shopList:res
+        }
+    } )
 }
 //发布商品信息
 const postShopList = (params) => {
     console.log(params,2222)
-    let html = parmas.description;
-    let formatHtml = html.raplace(/<[^>]*>/g, '')
+    let html = params.description;
+    let formatHtml = html.replace(/<[^>]*>/g, '')
     params.description = formatHtml.slice(0,30) + '...';
     params.fullDescription = html;
     return Shoplists.insertMany(params);

@@ -10,6 +10,7 @@ var { baseUrl } = require('./config');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var shopRouter = require('./routes/shop');
+var fileRouter = require('./routes/file');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(baseUrl + '/', jasonFormal);
 app.use(baseUrl + '/', indexRouter);
 app.use(baseUrl + '/users', usersRouter);
 app.use(baseUrl + '/shop', shopRouter);
+app.use(baseUrl + '/file', fileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
